@@ -1,27 +1,30 @@
 /**
  * Rotate. 
  * 
- * Rotating a square around the Z axis. To get the results
- * you expect, send the rotate function angle parameters that are
- * values between 0 and PI*2 (TWO_PI which is roughly 6.28). If you prefer to 
- * think about angles as degrees (0-360), you can use the radians() 
- * method to convert your values. For example: scale(radians(90))
- * is identical to the statement scale(PI/2). 
+ * Rotates a 'Boat' and also transates it around the graph. 
+ * 
+ * 
+ * 
+ * 
  */
-
+String fname = "PosDat.csv";
 Table Pos;
 int i;
-Boat boat = new Boat(int(width*.4),int(-height*.2),0,0,0.0);
+float xmoff=1000;
+float ymoff=1000;
+float hedmoff=0.001;
+
+Boat boat = new Boat(int(width*.5),int(height*.5),0,0,0.0);
 
 void setup() {
-  size(640, 480);
+  size(800, 800);
   noStroke();
  // textFont(createFont("SourceCodePro-Regular.ttf",24));
   fill(21);
   rectMode(CENTER);
   i=1;
   // Read data into file
-  Pos = loadTable("PosTab.csv");
+  Pos = loadTable(fname);
   println(Pos.getRowCount() + " total rows in table"); 
   /* Time = Pos.getRow(1); 
   ax   =
@@ -35,13 +38,13 @@ void draw() {
   background(220);
 
     
-  if(i > 625){
+  if(i >= Pos.getRowCount()){
     i=1;
   }
   String msg = "";
-  float  x = Pos.getFloat(i,1);
-  float  y = Pos.getFloat(i,2);
-  float  hed = Pos.getFloat(i,3);
+  float  x = Pos.getFloat(i,1) * xmoff;
+  float  y = Pos.getFloat(i,2) * ymoff;
+  float  hed = Pos.getFloat(i,3) * hedmoff;
  // print(" ^("+x+" " +y+" " + hed + "  ^)");
   boat.update(x,y,hed);
   
@@ -68,7 +71,7 @@ void draw() {
   fill(30,200,10);
   rect(-30, 0, 50,180,7); // Stbd
   fill(30,2,200);
-  rect(0,120, 100,50,8); // Bow
+  rect(0,-120, 100,50,8); // Bow
   
   
   
@@ -77,6 +80,6 @@ void draw() {
   
   
   
-  
+  // Increment i
   i=i+1;
 }
