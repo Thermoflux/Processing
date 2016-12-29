@@ -7,6 +7,7 @@ class Boat {
   int yDir;
   float hed;
   boolean playr;
+  int simSpd;
   // Constructor
   Boat(int xot, int yot, int xt, int yt, float hedt) {
     xofset = xot;
@@ -14,19 +15,28 @@ class Boat {
     x      = xt+xofset;
     y      = yt+yofset;
     hed    = hedt;
-    playr   = false;
+    playr  = false;
+    simSpd = 1;
   }
   
-  // Update fun
+  // Update fun to update position and heading
   void update(float xt, float yt, float hedt) {
     x      = xt+xofset;
     y      = yt+yofset;
     hed    = hedt;
+   
   }
   
+  // setter for Play
   void updatePlay(boolean playt){
     playr=playt;
   }
+  
+  // setter for sim speed
+  void updateSimSpeed(int sspdt){
+   simSpd = sspdt;
+  }
+  
   // Display fun
   
   //void display() {

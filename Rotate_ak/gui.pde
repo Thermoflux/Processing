@@ -1,4 +1,4 @@
-/* =========================================================
+/* ========================================================= //<>//
  * ====                   WARNING                        ===
  * =========================================================
  * The code in this tab has been generated from the GUI form
@@ -20,6 +20,7 @@ public void textfield1_change1(GTextField source, GEvent event) { //_CODE_:textf
 
 public void button1_click1(GButton source, GEvent event) { //_CODE_:button1:413223:
   println("button1 - GButton >> GEvent." + event + " @ " + millis());
+    // Pausing animation
      boat.updatePlay(false);
    
    
@@ -28,9 +29,16 @@ public void button1_click1(GButton source, GEvent event) { //_CODE_:button1:4132
 
 public void button2_click1(GButton source, GEvent event) { //_CODE_:button2:324534:
   println("button2 - GButton >> GEvent." + event + " @ " + millis());
+    // Playing animation
     boat.updatePlay(true);
 
 } //_CODE_:button2:324534:
+
+public void slider1_change1(GSlider source, GEvent event) { //_CODE_:slider1:713671:
+  println("slider1 - GSlider >> GEvent." + event + " @ " + millis());
+  // Update simulation speed
+  boat.updateSimSpeed(source.getValueI() );
+} //_CODE_:slider1:713671:
 
 
 
@@ -58,6 +66,20 @@ public void createGUI(){
   button2 = new GButton(this, 328, 48, 80, 30);
   button2.setText("Play");
   button2.addEventHandler(this, "button2_click1");
+  slider1 = new GSlider(this, 310, 10, 100, 40, 10.0);
+  slider1.setShowValue(true);
+  slider1.setShowLimits(true);
+  slider1.setLimits(1, 1, 10);
+  slider1.setNbrTicks(5);
+  slider1.setNumberFormat(G4P.INTEGER, 0);
+  slider1.setLocalColorScheme(GCScheme.CYAN_SCHEME);
+  slider1.setOpaque(false);
+  slider1.addEventHandler(this, "slider1_change1");
+  label2 = new GLabel(this, 220, 20, 80, 20);
+  label2.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
+  label2.setText("Sim Speed");
+  label2.setLocalColorScheme(GCScheme.BLUE_SCHEME);
+  label2.setOpaque(false);
 }
 
 // Variable declarations 
@@ -66,3 +88,5 @@ GTextField textfield1;
 GLabel label1; 
 GButton button1; 
 GButton button2; 
+GSlider slider1; 
+GLabel label2; 
