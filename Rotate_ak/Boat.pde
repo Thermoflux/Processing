@@ -6,6 +6,7 @@ class Boat {
   int xDir;
   int yDir;
   float hed;
+  boolean playr;
   // Constructor
   Boat(int xot, int yot, int xt, int yt, float hedt) {
     xofset = xot;
@@ -13,6 +14,7 @@ class Boat {
     x      = xt+xofset;
     y      = yt+yofset;
     hed    = hedt;
+    playr   = false;
   }
   
   // Update fun
@@ -22,6 +24,9 @@ class Boat {
     hed    = hedt;
   }
   
+  void updatePlay(boolean playt){
+    playr=playt;
+  }
   // Display fun
   
   //void display() {
