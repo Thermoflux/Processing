@@ -59,15 +59,24 @@ void draw() {
        i=1;
        endofList = false;
        }
-       
+    
   // Load new position and heading values     
   float  x = Pos.getFloat(i,1) * xmoff;
   float  y = Pos.getFloat(i,2) * ymoff;
   float  hed = Pos.getFloat(i,3) * hedmoff;
   
+   // Update Sim Time from Slider value
+  if(abs(slider2.getValueF() - boat.getBoatTime()) > 20 ){
+     i = int(map(slider2.getValueF(), 0, 10000, 0, float(Pos.getRowCount()-1) ));
+  }
+    
+  float tmpTime = map( float(i), (0.0), float(Pos.getRowCount()), (0.0), (10000.0) );
+ 
  // Updating values in object boat
-  boat.update(i,x,y,hed);
-  
+  boat.update(tmpTime,x,y,hed);
+  tmpTime = map( (boat.time), 0, 10000, 0, float(Pos.getRowCount()) ); //<>//
+  i = int(tmpTime);
+ println(boat.simSpd);
   // Plot boat position 
   pushMatrix();
   for(int j=0;j<i;j+=boat.simSpd){
@@ -106,6 +115,7 @@ void draw() {
   // Update simulation Time
   if(boat.playr == true ){
   i+=boat.simSpd;
+  slider2.setValue(boat.getBoatTime()); // Update Slider 2 here
    } 
  
  

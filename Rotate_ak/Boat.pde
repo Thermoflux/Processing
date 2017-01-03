@@ -1,4 +1,5 @@
 class Boat {
+ 
   // Properties
   int xofset;
   int yofset;
@@ -8,7 +9,8 @@ class Boat {
   float hed;
   boolean playr;
   int simSpd;
-  int time;
+  float time;
+  
   // Constructor
   Boat(int xot, int yot, int xt, int yt, float hedt) {
     xofset = xot;
@@ -17,12 +19,12 @@ class Boat {
     y      = yt+yofset;
     hed    = hedt;
     playr  = false;
-    simSpd = 1;
+    simSpd = 2;
     time = 0;
   }
   
   // Update fun to update position and heading
-  void update(int timet, float xt, float yt, float hedt) {
+  void update(float timet, float xt, float yt, float hedt) {
     x      = xt+xofset;
     y      = yt+yofset;
     hed    = hedt;
@@ -40,9 +42,13 @@ class Boat {
    simSpd = sspdt;
   }
  
+ // setter for sim time
+  void updateSimTime(float timet){
+   time = timet;
+  }
   
   // getter for time
-  int getBoatTime(){
+  float getBoatTime(){
     return this.time;
   }
     
