@@ -6,4 +6,4 @@ This is an attempt to create a gui that shows the following,
   - Its track
   - Its heading orientation
   
-I added some things like sliders that I thought were useful. Feel free to change according top your needs.
+I added some things like sliders that I thought were useful. Feel free to change according to your needs.
