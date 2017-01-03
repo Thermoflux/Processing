@@ -1,4 +1,5 @@
 class Boat {
+ 
   // Properties
   int xofset;
   int yofset;
@@ -8,6 +9,7 @@ class Boat {
   float hed;
   boolean playr;
   int simSpd;
+  
   // Constructor
   Boat(int xot, int yot, int xt, int yt, float hedt) {
     xofset = xot;
@@ -29,7 +31,7 @@ class Boat {
   
   // setter for Play
   void updatePlay(boolean playt){
-    playr=playt;
+    playr = playt;
   }
   
   // setter for sim speed

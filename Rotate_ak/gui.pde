@@ -20,22 +20,21 @@ public void textfield1_change1(GTextField source, GEvent event) { //_CODE_:textf
 
 public void button1_click1(GButton source, GEvent event) { //_CODE_:button1:413223:
   println("button1 - GButton >> GEvent." + event + " @ " + millis());
+  
     // Pausing animation
      boat.updatePlay(false);
-   
-   
-  
 } //_CODE_:button1:413223:
 
 public void button2_click1(GButton source, GEvent event) { //_CODE_:button2:324534:
   println("button2 - GButton >> GEvent." + event + " @ " + millis());
+   
     // Playing animation
     boat.updatePlay(true);
-
 } //_CODE_:button2:324534:
 
 public void slider1_change1(GSlider source, GEvent event) { //_CODE_:slider1:713671:
   println("slider1 - GSlider >> GEvent." + event + " @ " + millis());
+ 
   // Update simulation speed
   boat.updateSimSpeed(source.getValueI() );
 } //_CODE_:slider1:713671:

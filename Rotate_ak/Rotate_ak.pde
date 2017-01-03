@@ -79,12 +79,14 @@ void draw() {
     }
     popMatrix();
     
-    
+   // Boat Visualization - Text data display   
   pushMatrix();
       text(" X: "+ boat.x,width*.10,height*.20);
       text(  " Y: "+ y,width*.10,height*.250);
       text(" Hed: "+ hed,width*.10,height*.30);
-        translate(width/2+boat.x, height/3+boat.y);
+     
+   // Boat Visualization - Boat display     
+      translate(width/2+boat.x, height/3+boat.y);
       rotate(boat.hed);
       
       // Another kind of "boat"
@@ -96,6 +98,7 @@ void draw() {
         //rect(-30, 0, 50,180,7); // Stbd
         //fill(30,2,200);
         //rect(0,-120, 100,50,8); // Bow
+      
       strokeWeight(0);
       fill(0,100,200);
       rect(0,-30,30,40);
