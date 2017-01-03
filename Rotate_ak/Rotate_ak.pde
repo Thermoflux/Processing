@@ -17,6 +17,7 @@ float xmoff=1000;
 float ymoff=1000;
 float hedmoff=0.001;
 boolean endofList = false;
+boolean loop = false;
 Boat boat = new Boat(int(width*.5),int(height*.5),0,0,0.0);
 
 void setup() {
@@ -48,10 +49,10 @@ void draw() {
   background(200);  
 
   // To stop Animation at the end of data points
-  if((i >= Pos.getRowCount()-(boat.simSpd)) && endofList == false ){
+  if((i >= Pos.getRowCount()-(boat.simSpd)) && (endofList == false && loop == false) ){
       endofList = true;
-      boat.updatePlay(!endofList);
-      i-=boat.simSpd; //<>// //<>//
+      boat.updatePlay(!endofList); //<>//
+      i-=boat.simSpd; //<>//
   }
   
   // Update i value only when sim is running
@@ -73,10 +74,10 @@ void draw() {
   float tmpTime = map( float(i), (0.0), float(Pos.getRowCount()), (0.0), (10000.0) );
  
  // Updating values in object boat
-  boat.update(tmpTime,x,y,hed);
-  tmpTime = map( (boat.time), 0, 10000, 0, float(Pos.getRowCount()) ); //<>//
+  boat.update(tmpTime,x,y,hed); //<>//
+  tmpTime = map( (boat.time), 0, 10000, 0, float(Pos.getRowCount()) );
   i = int(tmpTime);
- println(boat.simSpd);
+ //println(boat.simSpd);
   // Plot boat position 
   pushMatrix();
   for(int j=0;j<i;j+=boat.simSpd){
@@ -118,7 +119,7 @@ void draw() {
   slider2.setValue(boat.getBoatTime()); // Update Slider 2 here
    } 
  
- 
+  checkbox1.
  
   
 }

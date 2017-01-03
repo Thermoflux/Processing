@@ -41,6 +41,17 @@ public void slider2_change1(GSlider source, GEvent event) { //_CODE_:slider2:226
      //  boat.updateSimTime(source.getValueF());
 } //_CODE_:slider2:226617:
 
+public void checkbox1_clicked1(GCheckbox source, GEvent event) { //_CODE_:checkbox1:643224:
+  println("checkbox1 - GCheckbox >> GEvent." + event + " @ " + millis());
+  if(event == GEvent.SELECTED){
+    loop = true;
+  }
+  else{
+    loop = false;
+  }
+  
+} //_CODE_:checkbox1:643224:
+
 
 
 // Create all the GUI controls. 
@@ -89,10 +100,15 @@ public void createGUI(){
   slider2.setLocalColorScheme(GCScheme.CYAN_SCHEME);
   slider2.setOpaque(false);
   slider2.addEventHandler(this, "slider2_change1");
-  label3 = new GLabel(this, 590, 20, 80, 20);
+  label3 = new GLabel(this, 580, 20, 80, 20);
   label3.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
   label3.setText("Sim Time");
   label3.setOpaque(false);
+  checkbox1 = new GCheckbox(this, 440, 10, 90, 20);
+  checkbox1.setIconAlign(GAlign.LEFT, GAlign.MIDDLE);
+  checkbox1.setText("Loop");
+  checkbox1.setOpaque(false);
+  checkbox1.addEventHandler(this, "checkbox1_clicked1");
 }
 
 // Variable declarations 
@@ -105,3 +121,4 @@ GSlider slider1;
 GLabel label2; 
 GSlider slider2; 
 GLabel label3; 
+GCheckbox checkbox1; 
