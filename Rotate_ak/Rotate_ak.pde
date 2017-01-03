@@ -1,5 +1,5 @@
 /**
- * Rotate. 
+ * Rotate Object 
  * 
  * Rotates a 'Boat' and also transates it around the graph. 
  * 
