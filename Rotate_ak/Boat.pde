@@ -37,7 +37,7 @@ class Boat {
    simSpd = sspdt;
   }
   
-  // Display fun
+  // Display fun // I have trouble using this function now.
   
   //void display() {
   //  fill(128,128,128);
