@@ -78,11 +78,12 @@ public void createGUI(){
   button2 = new GButton(this, 328, 48, 80, 30);
   button2.setText("Play");
   button2.addEventHandler(this, "button2_click1");
-  slider1 = new GSlider(this, 310, 10, 100, 40, 10.0);
+  slider1 = new GSlider(this, 310, 10, 100, 50, 10.0);
   slider1.setShowValue(true);
   slider1.setShowLimits(true);
   slider1.setLimits(1, 1, 10);
-  slider1.setNbrTicks(5);
+  slider1.setNbrTicks(3);
+  slider1.setShowTicks(true);
   slider1.setNumberFormat(G4P.INTEGER, 0);
   slider1.setLocalColorScheme(GCScheme.CYAN_SCHEME);
   slider1.setOpaque(false);
@@ -92,7 +93,8 @@ public void createGUI(){
   label2.setText("Sim Speed");
   label2.setLocalColorScheme(GCScheme.BLUE_SCHEME);
   label2.setOpaque(false);
-  slider2 = new GSlider(this, 440, 40, 356, 40, 10.0);
+  slider2 = new GSlider(this, 440, 40, 350, 50, 10.0);
+  slider2.setShowValue(true);
   slider2.setLimits(0, 0, 10000);
   slider2.setNbrTicks(10);
   slider2.setShowTicks(true);

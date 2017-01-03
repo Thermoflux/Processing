@@ -117,10 +117,7 @@ void draw() {
   if(boat.playr == true ){
   i+=boat.simSpd;
   slider2.setValue(boat.getBoatTime()); // Update Slider 2 here
-   } 
- 
-  checkbox1.
- 
+   }  
   
 }
 // EOF
