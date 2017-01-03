@@ -51,7 +51,7 @@ void draw() {
   if((i >= Pos.getRowCount()-(boat.simSpd)) && endofList == false ){
       endofList = true;
       boat.updatePlay(!endofList);
-      i-=boat.simSpd; //<>//
+      i-=boat.simSpd; //<>// //<>//
   }
   
   // Update i value only when sim is running
@@ -66,7 +66,7 @@ void draw() {
   float  hed = Pos.getFloat(i,3) * hedmoff;
   
  // Updating values in object boat
-  boat.update(x,y,hed);
+  boat.update(i,x,y,hed);
   
   // Plot boat position 
   pushMatrix();

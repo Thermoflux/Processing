@@ -8,6 +8,7 @@ class Boat {
   float hed;
   boolean playr;
   int simSpd;
+  int time;
   // Constructor
   Boat(int xot, int yot, int xt, int yt, float hedt) {
     xofset = xot;
@@ -17,13 +18,15 @@ class Boat {
     hed    = hedt;
     playr  = false;
     simSpd = 1;
+    time = 0;
   }
   
   // Update fun to update position and heading
-  void update(float xt, float yt, float hedt) {
+  void update(int timet, float xt, float yt, float hedt) {
     x      = xt+xofset;
     y      = yt+yofset;
     hed    = hedt;
+    time   = timet;
    
   }
   
@@ -36,7 +39,13 @@ class Boat {
   void updateSimSpeed(int sspdt){
    simSpd = sspdt;
   }
+ 
   
+  // getter for time
+  int getBoatTime(){
+    return this.time;
+  }
+    
   // Display fun // I have trouble using this function now.
   
   //void display() {

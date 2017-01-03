@@ -40,6 +40,14 @@ public void slider1_change1(GSlider source, GEvent event) { //_CODE_:slider1:713
   boat.updateSimSpeed(source.getValueI() );
 } //_CODE_:slider1:713671:
 
+public void slider2_change1(GSlider source, GEvent event) { //_CODE_:slider2:226617:
+  println("slider2 - GSlider >> GEvent." + event + " @ " + millis());
+  
+  // Update Slider value
+  source.setValue(boat.getBoatTime());
+  
+} //_CODE_:slider2:226617:
+
 
 
 // Create all the GUI controls. 
@@ -80,6 +88,18 @@ public void createGUI(){
   label2.setText("Sim Speed");
   label2.setLocalColorScheme(GCScheme.BLUE_SCHEME);
   label2.setOpaque(false);
+  slider2 = new GSlider(this, 440, 40, 356, 40, 10.0);
+  slider2.setLimits(0, 0, 10000);
+  slider2.setNbrTicks(10);
+  slider2.setShowTicks(true);
+  slider2.setNumberFormat(G4P.INTEGER, 0);
+  slider2.setLocalColorScheme(GCScheme.CYAN_SCHEME);
+  slider2.setOpaque(false);
+  slider2.addEventHandler(this, "slider2_change1");
+  label3 = new GLabel(this, 590, 20, 80, 20);
+  label3.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
+  label3.setText("Sim Time");
+  label3.setOpaque(false);
 }
 
 // Variable declarations 
@@ -90,3 +110,5 @@ GButton button1;
 GButton button2; 
 GSlider slider1; 
 GLabel label2; 
+GSlider slider2; 
+GLabel label3; 
