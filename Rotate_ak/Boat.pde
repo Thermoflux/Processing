@@ -32,7 +32,7 @@ class Boat {
   
   // setter for Play
   void updatePlay(boolean playt){
-    playr=playt;
+    playr = playt;
   }
   
   // setter for sim speed

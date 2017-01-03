@@ -43,6 +43,8 @@ public void slider1_change1(GSlider source, GEvent event) { //_CODE_:slider1:713
 public void slider2_change1(GSlider source, GEvent event) { //_CODE_:slider2:226617:
   println("slider2 - GSlider >> GEvent." + event + " @ " + millis());
   
+  
+  if(source.getValueI() != (boat.getBoatTime()-1 ) )
   // Update Slider value
   source.setValue(boat.getBoatTime());
   
@@ -96,6 +98,7 @@ public void createGUI(){
   slider2.setLocalColorScheme(GCScheme.CYAN_SCHEME);
   slider2.setOpaque(false);
   slider2.addEventHandler(this, "slider2_change1");
+  slider2.addEventHandler(this, "slider2_changeTime");
   label3 = new GLabel(this, 590, 20, 80, 20);
   label3.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
   label3.setText("Sim Time");
