@@ -35,6 +35,9 @@ void setup() {
 
   println("LIBRARY:");
   
+  
+  // Create file list
+  
   // Creating gui
   createGUI();
   size(800, 650);
@@ -120,4 +123,5 @@ void draw() {
    }  
   
 }
+
 // EOF
