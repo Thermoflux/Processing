@@ -14,8 +14,8 @@ String fname = "PosDat.csv";
 String tempFname = fname;
 Table Pos;
 int i;
-float xmoff=1000;
-float ymoff=1000;
+float xmoff=500;
+float ymoff=500;
 float hedmoff=0.001;
 boolean endofList = false;
 boolean loop = false;
@@ -88,7 +88,7 @@ void draw() {
   float  x = Pos.getFloat(i, 1) * xmoff;
   float  y = Pos.getFloat(i, 2) * ymoff;
   float  hed = Pos.getFloat(i, 3) * hedmoff;
-
+ 
   // Update Sim Time from Slider value
   if (abs(slider2.getValueF() - boat.getBoatTime()) > 20 ) {
     i = int(map(slider2.getValueF(), 0, 10000, 0, float(Pos.getRowCount()-1) ));
@@ -133,9 +133,9 @@ void draw() {
   // Simple Boat   
   strokeWeight(0);
   fill(0, 100, 200);
-  rect(0, -30, 30, 40);
+  rect(-35, 0, 30, 40);
   fill(0, 0, 200);
-  ellipse(0, 0, 40, 100);
+  ellipse(0, 0, 100, 40);
   popMatrix(); 
 
   // Update simulation Time
