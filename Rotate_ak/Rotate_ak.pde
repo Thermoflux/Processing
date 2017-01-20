@@ -14,8 +14,8 @@ String fname = "PosDat.csv";
 String tempFname = fname;
 Table Pos;
 int i;
-float xmoff=500;
-float ymoff=500;
+//float xmoff=500;
+//float ymoff=500;
 float hedmoff=0.001;
 boolean endofList = false;
 boolean loop = false;
@@ -66,6 +66,9 @@ void setup() {
   noStroke();
   fill(21);
   rectMode(CENTER);
+  
+  // Setting Zoom Level 
+  boat.updateZoomLevel(500);
 }
 
 void draw() {
@@ -85,8 +88,8 @@ void draw() {
   }
 
   // Load new position and heading values     
-  float  x = Pos.getFloat(i, 1) * xmoff;
-  float  y = Pos.getFloat(i, 2) * ymoff;
+  float  x = Pos.getFloat(i, 1) * boat.xmoff;
+  float  y = Pos.getFloat(i, 2) * boat.ymoff;
   float  hed = Pos.getFloat(i, 3) * hedmoff;
  
   // Update Sim Time from Slider value
@@ -104,8 +107,8 @@ void draw() {
   // Plot boat position 
   pushMatrix();
   for (int j=0; j<i; j+=boat.simSpd) {
-    float  xt = Pos.getFloat(j, 1) * xmoff;
-    float  yt = Pos.getFloat(j, 2) * ymoff;
+    float  xt = Pos.getFloat(j, 1) * boat.xmoff;
+    float  yt = Pos.getFloat(j, 2) * boat.ymoff;
     stroke(10);
     fill(50);
     ellipse(width/2+xt-150, height/2+yt-250, 5, 5);

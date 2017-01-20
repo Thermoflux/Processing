@@ -10,6 +10,8 @@ class Boat {
   boolean playr;
   int simSpd;
   float time;
+  float xmoff=500;
+  float ymoff=500;
 
   // Constructor
   Boat(int xot, int yot, int xt, int yt, float hedt) {
@@ -60,4 +62,11 @@ class Boat {
 
 
   //}
+  
+  // setter for Zoom Level
+  void updateZoomLevel(float zoomLvl) {
+    xmoff = zoomLvl;
+    ymoff = zoomLvl;
+  }
+  
 }
