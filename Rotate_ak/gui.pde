@@ -1,4 +1,4 @@
-/* =========================================================
+/* ========================================================= //<>//
  * ====                   WARNING                        ===
  * =========================================================
  * The code in this tab has been generated from the GUI form
@@ -118,10 +118,10 @@ public void createGUI(){
   dropList1 = new GDropList(this, 10, 50, 210, 150, 4);
   dropList1.setItems(loadStrings("list_727463"), 0);
   dropList1.addEventHandler(this, "dropList1_click1");
-  zoomLevel = new GSlider(this, 310, 90, 100, 40, 10.0);
+  zoomLevel = new GSlider(this, 310, 90, 140, 50, 10.0);
   zoomLevel.setShowValue(true);
   zoomLevel.setShowLimits(true);
-  zoomLevel.setLimits(50.0, 50.0, 1500.0);
+  zoomLevel.setLimits(50.0, 50.0, 2500.0);
   zoomLevel.setNbrTicks(5);
   zoomLevel.setShowTicks(true);
   zoomLevel.setNumberFormat(G4P.DECIMAL, 2);

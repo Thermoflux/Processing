@@ -48,10 +48,11 @@ class Boat {
     time = timet;
   }
 
-  // getter for time
+  // getter for time float
   float getBoatTime() {
     return this.time;
   }
+ 
 
   // Display fun // I have trouble using this function now.
 
