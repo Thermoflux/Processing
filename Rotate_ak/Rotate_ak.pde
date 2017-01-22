@@ -117,9 +117,9 @@ void draw() {
 
 
   pushMatrix();
-  text(" X: "+ boat.x, width*.10, height*.20);
-  text(  " Y: "+ y, width*.10, height*.250);
-  text(" Hed: "+ hed, width*.10, height*.30);
+  text(" X: "+ Pos.getFloat(i, 1), width*.10, height*.20);
+  text(  " Y: "+ Pos.getFloat(i, 2), width*.10, height*.250);
+  text(" Hed: "+ Pos.getFloat(i, 3), width*.10, height*.30);
 
   translate(width/2+boat.x, height/4+boat.y);
   rotate(boat.hed);
