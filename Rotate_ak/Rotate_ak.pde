@@ -88,8 +88,8 @@ void draw() {
   }
 
   // Load new position and heading values     
-  float  x = Pos.getFloat(i, 1) * boat.xmoff;
-  float  y = Pos.getFloat(i, 2) * boat.ymoff;
+  float  x = Pos.getFloat(i, 2) * boat.xmoff * -1;
+  float  y = Pos.getFloat(i, 1) * boat.ymoff * -1;
   float  hed = Pos.getFloat(i, 3) * hedmoff;
  
   // Update Sim Time from Slider value
@@ -107,8 +107,8 @@ void draw() {
   // Plot boat position 
   pushMatrix();
   for (int j=0; j<i; j+=boat.simSpd) {
-    float  xt = Pos.getFloat(j, 1) * boat.xmoff;
-    float  yt = Pos.getFloat(j, 2) * boat.ymoff;
+    float  xt = Pos.getFloat(j, 2) * boat.xmoff * -1;
+    float  yt = Pos.getFloat(j, 1) * boat.ymoff * -1;
     stroke(10);
     fill(50);
     ellipse(width/2+xt-150, height/2+yt-250, 5, 5);
