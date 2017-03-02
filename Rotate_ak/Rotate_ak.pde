@@ -1,4 +1,4 @@
-/** //<>// //<>// //<>//
+/** //<>// //<>// //<>// //<>//
  * Rotate Object 
  * 
  * Rotates a 'Boat' and also transates it around the graph. 
@@ -111,7 +111,7 @@ void draw() {
     float  yt = Pos.getFloat(j, 1) * boat.ymoff * -1;
     stroke(10);
     fill(50);
-    ellipse(width/2+xt-150, height/2+yt-250, 5, 5);
+    ellipse(width/2+xt-150, height/2+yt, 5, 5);
   }
   popMatrix();
 

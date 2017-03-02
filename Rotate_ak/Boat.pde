@@ -53,7 +53,16 @@ class Boat {
     return this.time;
   }
  
-
+ // setter for xmoff
+ void updateXoffset(int xoff){
+   xofset = xoff;
+ }
+ 
+// setter for ymoff
+ void updateYoffset(int yoff){
+   yofset = yoff;
+ }
+ 
   // Display fun // I have trouble using this function now.
 
   //void display() {

@@ -61,6 +61,16 @@ public void ZoomLevel_change1(GSlider source, GEvent event) { //_CODE_:zoomLevel
     
 } //_CODE_:zoomLevel:820282:
 
+public void slider3_change1(GSlider source, GEvent event) { //_CODE_:slider3:626506:
+  println("slider3 - GSlider >> GEvent." + event + " @ " + millis());
+  boat.updateYoffset(5*source.getValueI());
+} //_CODE_:slider3:626506:
+
+public void slider4_change1(GSlider source, GEvent event) { //_CODE_:slider4:279415:
+  println("slider4 - GSlider >> GEvent." + event + " @ " + millis());
+  boat.updateXoffset(5*source.getValueI());  
+} //_CODE_:slider4:279415:
+
 
 
 // Create all the GUI controls. 
@@ -132,6 +142,26 @@ public void createGUI(){
   label4.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
   label4.setText("Zoom Level");
   label4.setOpaque(false);
+  slider3 = new GSlider(this, 822, 48, 100, 40, 10.0);
+  slider3.setShowLimits(true);
+  slider3.setLimits(0.5, -100.0, 100.0);
+  slider3.setNumberFormat(G4P.DECIMAL, 2);
+  slider3.setOpaque(false);
+  slider3.addEventHandler(this, "slider3_change1");
+  slider4 = new GSlider(this, 822, 114, 100, 40, 10.0);
+  slider4.setShowLimits(true);
+  slider4.setLimits(0.5, -100.0, 100.0);
+  slider4.setNumberFormat(G4P.DECIMAL, 2);
+  slider4.setOpaque(false);
+  slider4.addEventHandler(this, "slider4_change1");
+  label5 = new GLabel(this, 822, 90, 80, 20);
+  label5.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
+  label5.setText("X Offset");
+  label5.setOpaque(false);
+  label6 = new GLabel(this, 822, 24, 80, 20);
+  label6.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
+  label6.setText("Y Offset");
+  label6.setOpaque(false);
 }
 
 // Variable declarations 
@@ -147,3 +177,7 @@ GCheckbox checkbox1;
 GDropList dropList1; 
 GSlider zoomLevel; 
 GLabel label4; 
+GSlider slider3; 
+GSlider slider4; 
+GLabel label5; 
+GLabel label6; 
